@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Vase Display</title>
+    <title>Keramikvase</title>
     <style>
         body {
             margin: 0;
@@ -11,6 +11,7 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            background-color: #f5f5f5;
         }
         #video-container {
             position: relative;
@@ -41,28 +42,45 @@
             cursor: pointer;
         }
         #description-container {
-            background-color: white;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            text-align: justify;
+            text-align: center;
             font-size: 16px;
+            font-weight: bold;
+            max-width: 80%;
+            border-radius: 10px;
+        }
+        #description-container h1 {
+            font-size: 24px;
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+        #description-container p {
+            font-size: 18px;
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <div id="video-container">
+        <!-- Убедитесь, что вы загрузили Video1.mov в репозиторий -->
         <video autoplay loop muted>
-            <source src="Video1.MOV" type="video/mp4">
-            Your browser does not support the video tag.
+            <source src="Video1.mov" type="video/mp4">
+            Ваш браузер не поддерживает воспроизведение видео.
         </video>
         <img id="logo" src="logo.png" alt="Logo">
         <div id="language-buttons">
-            <button onclick="changeLanguage('de')">Deutsch</button>
             <button onclick="changeLanguage('en')">English</button>
             <button onclick="changeLanguage('fr')">Français</button>
             <button onclick="changeLanguage('es')">Español</button>
         </div>
     </div>
     <div id="description-container">
+        <h1>Keramikvase</h1>
         <p id="description-text">
             Dies ist eine Keramikvase mit einem eleganten blauen Ornament auf weißem Hintergrund, das an Delfter Porzellan oder chinesische Keramik erinnert. Die Muster bestehen aus floralen Motiven, geometrischen Elementen und dekorativen Rahmen. Die Vase hat eine bauchige Form mit einem schmalen Hals und zeigt eindeutig die feine Handwerkskunst, die typisch für die Kunst des 17.–18. Jahrhunderts ist, inspiriert von europäischen oder asiatischen Traditionen.
         </p>
@@ -70,7 +88,6 @@
 
     <script>
         const descriptions = {
-            de: "Dies ist eine Keramikvase mit einem eleganten blauen Ornament auf weißem Hintergrund, das an Delfter Porzellan oder chinesische Keramik erinnert. Die Muster bestehen aus floralen Motiven, geometrischen Elementen und dekorativen Rahmen. Die Vase hat eine bauchige Form mit einem schmalen Hals und zeigt eindeutig die feine Handwerkskunst, die typisch für die Kunst des 17.–18. Jahrhunderts ist, inspiriert von europäischen oder asiatischen Traditionen.",
             en: "This is a ceramic vase with an elegant blue pattern on a white background, reminiscent of Delftware or Chinese ceramics. The designs feature floral motifs, geometric elements, and decorative frames. The vase has a rounded shape with a narrow neck and clearly showcases the fine craftsmanship characteristic of 17th–18th century art, inspired by European or Asian traditions.",
             fr: "Il s'agit d'un vase en céramique avec un élégant motif bleu sur fond blanc, rappelant la faïence de Delft ou la céramique chinoise. Les motifs comprennent des éléments floraux, des formes géométriques et des cadres décoratifs. Le vase a une forme arrondie avec un col étroit et illustre clairement le savoir-faire raffiné caractéristique de l'art des XVIIe–XVIIIe siècles, inspiré des traditions européennes ou asiatiques.",
             es: "Se trata de un jarrón de cerámica con un elegante diseño azul sobre fondo blanco, que recuerda a la loza de Delft o a la cerámica china. Los motivos incluyen elementos florales, formas geométricas y marcos decorativos. El jarrón tiene una forma redondeada con un cuello estrecho y muestra claramente la fina artesanía característica del arte de los siglos XVII–XVIII, inspirado en las tradiciones europeas o asiáticas."
