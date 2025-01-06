@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: white; /* Фон страницы теперь белый */
+            background-color: white; /* Фон страницы полностью белый */
         }
         #header-container {
             padding: 20px;
@@ -16,6 +16,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: white; /* Белый фон под заголовком */
         }
         #logo {
             width: 60px;
@@ -41,9 +42,8 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            background-color: white; /* Убираем цвет контейнера */
+            border-radius: 0; /* Убираем закругления */
             text-align: justify;
         }
         #description-container h1 {
@@ -57,14 +57,14 @@
             line-height: 1.6;
         }
         #video-container {
-            margin-top: 20px;
+            margin-top: 0; /* Убираем отступы между текстом и видео */
             text-align: center;
+            background-color: white; /* Белый фон под видео */
         }
         video {
             width: 100%;
             max-width: 800px;
             height: auto;
-            border-radius: 10px;
             object-fit: cover;
         }
     </style>
@@ -85,7 +85,6 @@
         </p>
     </div>
     <div id="video-container">
-        <!-- Убедитесь, что вы загрузили Video1.mov в репозиторий -->
         <video autoplay loop muted>
             <source src="Video1.mov" type="video/mp4">
             Ваш браузер не поддерживает воспроизведение видео.
